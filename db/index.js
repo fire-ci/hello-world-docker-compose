@@ -1,10 +1,9 @@
 const knex = require('knex')({
   client: 'pg',
   connection: {
-    host : 'localhost:5432',
+    host : 'db',
     user : 'john',
-    password : 'doe',
-    database : 'postgres'
+    password : 'mysecretpassword',
   },
 });
 
