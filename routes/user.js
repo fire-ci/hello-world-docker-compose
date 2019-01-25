@@ -3,6 +3,8 @@ const db = require('../db');
 module.exports = (app) => {
 
   app.route('/api/users').post((req, res, next) => {
+    console.log(`POST /api/users`);
+
     const { firstname, lastname } = req.body;
 
     db('users').returning('id').insert({ firstname, lastname }).then(result => {
@@ -15,6 +17,8 @@ module.exports = (app) => {
   });
 
   app.route('/api/users').get((req, res, next) => {
+    console.log(`GET /api/users`);
+
     db('users')
     .select('id', 'firstname', 'lastname')
     .then(users => res.status(200).send(users))
@@ -26,6 +30,8 @@ module.exports = (app) => {
 
   app.route('/api/users/:user_id').get((req, res, next) => {
     const { user_id } = req.body;
+    
+    console.log(`GET /api/users/${user_id}`);
 
     db('users')
     .select('id', 'firstname', 'lastname')

@@ -6,8 +6,9 @@ console.log(`Creating tables ...`);
 schema
   .hasTable('users').then(function(exists) {
     if (!exists) {
+      console.log(`Creating table 'users'`);
       return schema.createTable('users', function (table) {
-        table.string('id').unsigned().notNullable().primary();
+        table.increments();
         table.string('firstname').notNullable();
         table.string('lastname').notNullable();
         table.timestamps(true, true);
