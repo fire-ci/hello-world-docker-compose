@@ -31,3 +31,4 @@ A few things to note:
 - The DB setup/seeding/migration cannot be done in a separate ephemeral container because of the --abort-on-container-exit flag: the container would exit and the tests one would not be run. Instead, both the DB setup and tests are run in the tests container
 
 
+
