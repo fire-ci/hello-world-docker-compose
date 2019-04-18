@@ -1,4 +1,0 @@
-version: 2
-
-pipeline:
-  dockercomposefile: docker-compose.yml
